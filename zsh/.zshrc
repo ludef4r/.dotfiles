@@ -31,6 +31,9 @@ bindkey '^[[1;5B' history-search-forward
 autoload -U compinit &&  compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+# Autocd
+setopt autocd
+
 alias  ls='ls --color=auto'
 setxkbmap us
 
