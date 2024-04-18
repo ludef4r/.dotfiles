@@ -11,19 +11,18 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%F{cyan}%2~%f %F{green}${vcs_info_msg_0_}%f %F{blue})%f '
 
-# Search for specific commands
+# History configs
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=5000
-HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
-setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Search for specific commands
 bindkey '^[[1;5A' history-search-backward
 bindkey '^[[1;5B' history-search-forward
 
