@@ -15,20 +15,15 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp_zero.setup_servers({'clangd', 'eslint', 'tsserver' })
-
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "clangd", "tsserver" },
+	ensure_installed = { "clangd","lua_ls", "tsserver" },
 	handlers = {
 		lsp_zero.default_setup,
-		lua_ls = function()
-			local lua_opts = lsp_zero.nvim_lua_ls()
-			require('lspconfig').lua_ls.setup(lua_opts)
-		end,
+        lsp_zero.setup_servers(),
 	}
 })
 
@@ -40,9 +35,10 @@ cmp.setup({
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
     ['<tab>'] = cmp.mapping.confirm({ select = true }),
+    ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
