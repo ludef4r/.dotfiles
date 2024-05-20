@@ -8,7 +8,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 local map = function(keys, func, des)
-    vim.keymap.set("n", keys, func, { buffer = event.buf, desc = des})
+    vim.keymap.set("n", keys, func, { desc = des})
 end
 
 map("<leader>pv", vim.cmd.Ex, "Go to netrw")
