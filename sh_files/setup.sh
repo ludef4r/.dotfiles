@@ -1,5 +1,5 @@
 # Install essential packages for the desktop environment and utilities
-sudo apt-get install kitty i3 i3lock zsh zsh-syntax-highlighting feh picom nvim polybar ripgrep
+sudo apt-get install kitty i3 i3lock zsh zsh-syntax-highlighting feh picom nvim polybar ripgrep zip
 
 # Update package list and install wget and fontconfig
 sudo apt update

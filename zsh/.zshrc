@@ -37,3 +37,6 @@ alias  ls='ls --color=auto'
 setxkbmap us
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+alias vim=nvim
+alias .=clear
