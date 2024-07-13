@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
--- Testing if I like this this
-vim.keymap.set("i", "<leader>jj", "<Esc>")
-
 -- Move with indentation correct
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
