@@ -39,4 +39,5 @@ setxkbmap us
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias vim=nvim
+alias emacs="emacs -nw"
 alias .=clear
