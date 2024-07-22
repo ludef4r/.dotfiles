@@ -20,3 +20,6 @@ sudo update-alternatives --config x-terminal-emulator
 
 # Set Zsh as the default shell for the current user
 chsh -s $(which zsh)
+
+# Install programming languages
+sudo apt install gcc make
