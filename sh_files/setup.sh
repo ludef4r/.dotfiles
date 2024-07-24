@@ -25,3 +25,5 @@ chsh -s $(which zsh)
 sudo apt install gcc make # C
 
 sudo apt install nodejs npm -y # Javascript
+
+sudo apt install sbcl # Lisp
