@@ -29,7 +29,9 @@
 (require 'undo-fu)
 
 ;;; Globals
+(setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
+
 (global-company-mode 1)
 
 ;;; Custom Functions
@@ -46,15 +48,11 @@
 
 (defun setup-sly-repl-keybindings ()
   "Set up keybindings for SLY REPL mode."
-  (define-key sly-repl-mode-map (kbd "<up>") 'sly-repl-previous-input)
-  (define-key sly-repl-mode-map (kbd "<down>") 'sly-repl-next-input))
+  (define-key sly-repl-mode-map (kbd "C-<up>") 'sly-repl-previous-input)
+  (define-key sly-repl-mode-map (kbd "C-<down>") 'sly-repl-next-input))
 
 ;;; Unbind default keybindings to avoid conflicts
 (global-unset-key (kbd "C-a"))  
-(global-unset-key (kbd "<down>"))     
-(global-unset-key (kbd "<up>"))
-(global-unset-key (kbd "<left>"))
-(global-unset-key (kbd "<right>"))
 (global-unset-key (kbd "C-j"))
 (global-unset-key (kbd "C-k"))
 (global-unset-key (kbd "C-h"))
@@ -80,15 +78,10 @@
 ;; Movement
 (global-set-key (kbd "C-j") 'next-line)
 (global-set-key (kbd "C-k") 'previous-line)
-(global-set-key (kbd "C-h") 'left-char)
 (global-set-key (kbd "C-l") 'right-char)
+(global-set-key (kbd "C-h") 'left-char)
 
 ;; Undo/Redo
 (global-set-key (kbd "C-u") 'undo)
 (global-set-key (kbd "C-r") 'undo-fu-redo)
 
-;; xD
-(global-set-key (kbd "<left>") (lambda () (interactive) (message "Go back to windows notepad")))
-(global-set-key (kbd "<right>") (lambda () (interactive) (message "Foot pic")))
-(global-set-key (kbd "<up>") (lambda () (interactive) (message "Cringe")))
-(global-set-key (kbd "<down>") (lambda () (interactive) (message "Vim is better!!!!!!!!!!!!!!!!!")))
