@@ -22,4 +22,6 @@ sudo update-alternatives --config x-terminal-emulator
 chsh -s $(which zsh)
 
 # Install programming languages
-sudo apt install gcc make
+sudo apt install gcc make # C
+
+sudo apt install nodejs npm -y # Javascript
